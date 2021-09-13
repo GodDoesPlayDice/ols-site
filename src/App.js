@@ -1,19 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
 
-// Import the functions you need from the SDKs you need
+// import firebase
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// import react router
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-// import components
-import MyAppBar from "./components/MyAppBar";
-
-
+// import pages
+import Home from "./pages/Home";
 
 
 
@@ -31,12 +31,24 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <MyAppBar></MyAppBar>
-    </div>
+    <Router>
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/games">
+          </Route>
+          <Route path="/about">
+          </Route>
+          <Route path="/support">
+          </Route>
+          <Route path="/privacy">
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+    </Router>
   );
-}
-
-export default App;
+};

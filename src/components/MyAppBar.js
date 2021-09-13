@@ -7,6 +7,8 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
+import LinkButton from "../components/LinkButton";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -27,8 +29,28 @@ export default function MyAppBar() {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            ordinary least squares
+            Ordinary Least Squares
           </Typography>
+          <LinkButton
+            to='/games'
+          >
+            Games
+          </LinkButton>
+          <LinkButton
+            to='/about'
+          >
+            About us
+          </LinkButton>
+          <LinkButton
+            to='/support'
+          >
+            Support
+          </LinkButton>
+          <LinkButton
+            to='/privacy'
+          >
+            Privacy policy
+          </LinkButton>
         </Toolbar>
       </AppBar>
     </div>
