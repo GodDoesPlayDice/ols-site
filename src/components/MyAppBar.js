@@ -15,6 +15,8 @@ import ListItem from '@material-ui/core/ListItem';
 
 import LinkButton from "../components/LinkButton";
 
+import { useHistory } from "react-router-dom";
+
 const useStyles = makeStyles((theme) => ({
 	root: {
 		flexGrow: 1,
@@ -30,13 +32,14 @@ const useStyles = makeStyles((theme) => ({
 export default function MyAppBar() {
 	const classes = useStyles();
 	const theme = useTheme();
-	const isMobile = !useMediaQuery(theme.breakpoints.up('sm'));
+	const isMobile = !useMediaQuery('(min-width:770px)');
+	let history = useHistory();
 
 	let [drawer, toggleDrawer] = React.useState(false);
 
 	return (
 		<div className={classes.root}>
-			<AppBar position="static">
+			<AppBar position="fixed">
 				<Toolbar>
 					{isMobile &&
 						<IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu"
@@ -47,14 +50,20 @@ export default function MyAppBar() {
 							<MenuIcon />
 						</IconButton>
 					}
-					<Typography 
-					variant="h6" 
-					className={classes.title}
+					<Typography
+						variant="h6"
+						className={classes.title}
+						onClick={() => { history.push("/") }}
 					>
 						Ordinary Least Squares
           			</Typography>
 					{!isMobile &&
 						<>
+							<LinkButton
+								to='/'
+							>
+								Home
+          					</LinkButton>
 							<LinkButton
 								to='/games'
 							>
@@ -82,6 +91,14 @@ export default function MyAppBar() {
 				<Drawer anchor="left" open={drawer} onClose={() => toggleDrawer(false)}>
 					<List
 					>
+						<ListItem button>
+							<LinkButton
+								to='/'
+								onClick={() => toggleDrawer(false)}
+							>
+								Home
+          					</LinkButton>
+						</ListItem>
 						<ListItem button>
 							<LinkButton
 								to='/games'

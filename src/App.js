@@ -14,6 +14,7 @@ import {
 
 // import pages
 import Home from "./pages/Home";
+import Privacy from "./pages/Privacy";
 
 // import components
 import MyAppBar from "./components/MyAppBar";
@@ -49,6 +50,7 @@ export default function App() {
         <Route path="/support">
         </Route>
         <Route path="/privacy">
+          <Privacy />
         </Route>
         <Route path="/">
           <Home />
