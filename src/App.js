@@ -15,6 +15,8 @@ import {
 // import pages
 import Home from "./pages/Home";
 
+// import components
+import MyAppBar from "./components/MyAppBar";
 
 
 const firebaseConfig = {
@@ -34,21 +36,24 @@ const analytics = getAnalytics(app);
 export default function App() {
   return (
     <Router>
-        {/* A <Switch> looks through its children <Route>s and
+      <MyAppBar
+      >
+      </MyAppBar>
+      {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/games">
-          </Route>
-          <Route path="/about">
-          </Route>
-          <Route path="/support">
-          </Route>
-          <Route path="/privacy">
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
+      <Switch>
+        <Route path="/games">
+        </Route>
+        <Route path="/about">
+        </Route>
+        <Route path="/support">
+        </Route>
+        <Route path="/privacy">
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
     </Router>
   );
 };
