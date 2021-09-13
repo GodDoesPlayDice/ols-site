@@ -9,6 +9,14 @@ import { getAnalytics } from "firebase/analytics";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+// import components
+import MyAppBar from "./components/MyAppBar";
+
+
+
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyDPYh8m67ImOIX83-ZkQKuC1nhS62bR-HQ",
   authDomain: "ordinary-least-squares.firebaseapp.com",
@@ -26,20 +34,7 @@ const analytics = getAnalytics(app);
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MyAppBar></MyAppBar>
     </div>
   );
 }
