@@ -15,6 +15,9 @@ import {
 // import pages
 import Home from "./pages/Home";
 import Privacy from "./pages/Privacy";
+import About from "./pages/About";
+import Games from "./pages/Games";
+import Support from "./pages/Support";
 
 // import components
 import MyAppBar from "./components/MyAppBar";
@@ -44,10 +47,13 @@ export default function App() {
             renders the first one that matches the current URL. */}
       <Switch>
         <Route path="/games">
+          <Games />
         </Route>
         <Route path="/about">
+          <About />
         </Route>
         <Route path="/support">
+          <Support />
         </Route>
         <Route path="/privacy">
           <Privacy />
