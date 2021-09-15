@@ -19,7 +19,7 @@ export default function About() {
                 </Typography>
                 <h1>Contact Us</h1>
                 <p>Don't hesitate to contact us if you have any questions.</p>
-                <ul><li>Via Email:  alik_okroyan@mail.ru</li><li>Via Phone Number:  +79186313258</li><li>Via this Link:  https://ordinaryleastsquares.ru/support</li><li>Via this Address: Russian Federation, Krasnodar, Yarkaya 15/37</li>
+                <ul><li>Via Email:  alik_okroyan@mail.ru</li><li>Via Phone Number:  +79186313258</li><li>Via this Link:  https://ordinaryleastsquares.ru/support</li>
                 </ul>
             </Container>
         </>
